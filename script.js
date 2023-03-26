@@ -1320,12 +1320,13 @@ const textElement = document.getElementById('text');
                 id: 'endCard', 
                 lines: [ 
                     {text: "Thank you so much for playing!!"},
-                    {text: 'Before you leave, please write this number down so Ray can see it: ' + state.toString(2) },
+                    {text: 'Before you leave, please take note of the number on the last line!'},
                     {text: "(This number is used to store which decisions you made over the course of the story,"},
                     {text: "which will be super useful for Ray and pretty much Ray only!!)"}
                 ],
                 options: [ 
-                ]
+                ],
+                endCard: true
             }
         ]
         function showTextNode(textNodeIndex) { 
@@ -1351,12 +1352,15 @@ const textElement = document.getElementById('text');
                     optionButtonsElement.appendChild(button);
                 }
             })
+
+            if (textNode.endCard == true) { 
+                textElement.innerHTML += state.toString(2);
+            }
         }
         
         function showOption(option) { 
             console.log(option.text);
             console.log("state: " + state.toString(2));
-            //console.log(option);
             console.log(option.requiredState);
             if (option.requiredState == null) { 
                 return true; 
@@ -1382,10 +1386,6 @@ const textElement = document.getElementById('text');
         
             }
             console.log('Set State To: ' + state.toString(2));
-            if (option.exec != undefined) { 
-                console.log('execute something!'); 
-                option.exec;
-            }
             showTextNode(nextTextNodeID); 
         }
         
