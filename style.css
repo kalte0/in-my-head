@@ -1,0 +1,42 @@
+*, *::before, *::after {
+    /*box-sizing: border-box; /* means that when sizing, the width and height assigned takes into account the padding- the content will shrink.*/ 
+    font-family: Gotham Rounded; 
+    font-size: 1.03em; 
+    display: flex;
+    flex-direction: column; 
+}
+
+body { 
+    margin: 10px 0 0 10px; 
+    justify-content: left; 
+    max-width: 80%; 
+    align-items: top;
+    background-color: rgb(21, 19, 19);
+    color:rgb(242, 249, 252); 
+    white-space: wrap; 
+}
+
+.container { 
+    /* widthL: 800px; */
+    
+    max-width: 80%;
+    padding: 10px; 
+    border-radius: 5px; 
+}
+
+.btn-grid { 
+    background-color: Transparent;
+    border: none;
+    margin-top: 10px; 
+}
+
+.btn { 
+    color: rgb(212, 190, 218);
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+.btn:hover { 
+    color: rgb(194, 138, 211)
+}
